@@ -7,12 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
-            --accent: #6366f1;
-            --border: #404040;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f0f7f0;
+            --text-primary: #01611b;
+            --text-secondary: #4a634a;
+            --accent: #2e7d32;
+            --border: #c8e6c9;
         }
 
         * {
@@ -39,6 +39,8 @@
             margin-bottom: 2rem;
             color: var(--accent);
             text-align: center;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--border);
         }
 
         h2 {
@@ -61,6 +63,12 @@
             border-radius: 8px;
             margin-bottom: 1.5rem;
             border: 1px solid var(--border);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .reference:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1);
         }
 
         .reference-title {
@@ -78,67 +86,106 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
         }
 
         .reference-link:hover {
-            text-decoration: underline;
-        }
-
-        #navigation {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            background-color: var(--bg-secondary);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            max-width: 200px;
-        }
-
-        #navigation h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        #navigation ul {
-            list-style-type: none;
-        }
-
-        #navigation a {
-            color: var(--text-secondary);
+            background-color: var(--accent);
+            color: white;
             text-decoration: none;
-            display: block;
-            padding: 0.5rem 0;
-        }
-
-        #navigation a:hover {
-            color: var(--accent);
         }
 
         @media (max-width: 768px) {
             body {
                 padding: 1rem;
             }
-
-            #navigation {
-                display: none;
-            }
         }
+
+        .side-nav {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        width: 200px;
+        background-color: #f0f7f0;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #c8e6c9;
+        box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+        z-index: 1000;
+    }
+
+    .side-nav__header {
+        color: #2e7d32;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #c8e6c9;
+        font-weight: 600;
+    }
+
+    .side-nav__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .side-nav__item {
+        margin-bottom: 0.5rem;
+    }
+
+    .side-nav__link {
+        display: block;
+        padding: 0.5rem;
+        color: #4a634a;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .side-nav__link:hover {
+        background-color: #c8e6c9;
+        color: #2e7d32;
+        padding-left: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .side-nav {
+            position: static;
+            width: 100%;
+            margin: 1rem 0 2rem 0;
+            top: auto;
+            right: auto;
+        }
+    }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Win Nutri - Research References</h1>
 
-        <nav id="navigation">
-            <h4>Quick Navigation</h4>
-            <ul>
-                <li><a href="#win-nutri-f">Win Nutri - F</a></li>
-                <li><a href="#win-nutri-j">Win Nutri - J</a></li>
-                <li><a href="#win-nutri-cal">Win Nutri - CAL</a></li>
-                <li><a href="#win-nutri-organic">Win Nutri - Organic Capsule</a></li>
-                <li><a href="#win-nutri-hair-tablet">Win Nutri - Hair Tablet</a></li>
-                <li><a href="#win-nutri-hair-serum">Win Nutri - Hair Serum</a></li>
+        <nav class="side-nav">
+            <h4 class="side-nav__header">Quick Navigation</h4>
+            <ul class="side-nav__list">
+                <li class="side-nav__item">
+                    <a href="#win-nutri-f" class="side-nav__link">Win Nutri - F</a>
+                </li>
+                <li class="side-nav__item">
+                    <a href="#win-nutri-j" class="side-nav__link">Win Nutri - J</a>
+                </li>
+                <li class="side-nav__item">
+                    <a href="#win-nutri-cal" class="side-nav__link">Win Nutri - CAL</a>
+                </li>
+                <li class="side-nav__item">
+                    <a href="#win-nutri-organic" class="side-nav__link">Win Nutri - Organic Capsule</a>
+                </li>
+                <li class="side-nav__item">
+                    <a href="#win-nutri-hair-tablet" class="side-nav__link">Win Nutri - Hair Tablet</a>
+                </li>
+                <li class="side-nav__item">
+                    <a href="#win-nutri-hair-serum" class="side-nav__link">Win Nutri - Hair Serum</a>
+                </li>
             </ul>
         </nav>
 
@@ -257,7 +304,7 @@
                 <h3>8. Bala (Sida Cordifolia)</h3>
                 <div class="reference-content">
                     <p>This paper examines how Sida cordifolia can assist in managing inflammation related to joint disorders.</p>
-                    <a href="https://www.japsonline.com/admin/php/uploads/16_pdf.pdf" class="reference-link">View Research Paper</a>
+                    <a href="#" class="reference-link">View Research Paper</a>
                 </div>
             </div>
         </section>
@@ -549,4 +596,6 @@
                 </div>
             </div>
         </section>
-
+    </div>
+</body>
+</html>
